@@ -6,13 +6,10 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^', include('shop.urls', namespace='shop')),
     url(r'^cart/', include('cart.urls', namespace='cart')),
+    # url(r'^orders/', include('orders.urls', namespace='orders')),
+    url(r'^', include('shop.urls', namespace='shop')),
 ]
-
-# Remember that we only serve static files this way during the development.
-# In a production environment, you should never serve
-# static files with Django.
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,
