@@ -7,6 +7,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^', include('shop.urls', namespace='shop')),
+    url(r'^cart/', include('cart.urls', namespace='cart')),
 ]
 
 # Remember that we only serve static files this way during the development.
